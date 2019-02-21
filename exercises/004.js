@@ -28,6 +28,11 @@ Starter Code
 */
 
 function listAllValues(obj) {
-  // your code here
+  var array = [];
+  for (var key in obj) {
+    var value = obj[key];
+    array.push(value);
+  }
+  return array;
 
 }

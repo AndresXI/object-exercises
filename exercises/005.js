@@ -25,6 +25,28 @@ Starter Code :
 */
 
 function transformEmployeeData(array) {
-  // your code here
+    var c = 0;
+    var obj = {};
+    var resultA = [];
 
+    for (var i in array) {
+        var arr2 = array[i];
+
+        for (var j in arr2) {
+            c++;
+            var val = arr2[j];
+            var uno = val[0];
+            var dos = val[1];
+            console.log(j);
+            obj[uno] = dos;
+
+            if (c === 4) {
+                resultA.push(obj)
+            }
+        }
+
+        obj = {}
+        c = 0;
+    }
+    return resultA;
 }

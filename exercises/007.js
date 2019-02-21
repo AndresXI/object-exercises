@@ -48,9 +48,26 @@ var customerData = {
 };
 
 function greetCustomer(firstName) {
-  var greeting = '';
-  // your code here
+  var users = Object.keys(customerData).map(function (key) {
+    return [key, customerData[key]];
+  });
 
-  return greeting;
+  for (var i in users) {
+    var u = users[i][0];
+
+    if ((u === firstName) && (users[i][1].visits === 1)) {
+      return greeting = `Welcome back, ${firstName}! We're glad you liked us the first time!`;
+    }
+
+    if (u === firstName && (users[i][1].visits > 1)) {
+      return greeting = `Welcome back, ${firstName}! So glad to see you again!`;
+    }
+
+  }
+
+  if (u !== firstName) {
+    return greeting = 'Welcome! Is this your first time?';
+    // return;
+  }
 }
 

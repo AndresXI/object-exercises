@@ -22,5 +22,12 @@ Starter Code:
 */
 
 function convertObjectToList(obj) {
-  // your code here
+  // map through each key
+  var result = Object.keys(obj).map(function (key) {
+    // return an array with the first index containing the key
+    // and the second element the value of the property
+    return [key, obj[key]];
+  });
+
+  return result;
 }
